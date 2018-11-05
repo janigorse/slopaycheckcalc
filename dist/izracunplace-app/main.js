@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "html,\r\nbody {\r\n  height: 100%;\r\n}\r\n\r\nbody {\r\n  display: flex;\r\n  align-items: center;\r\n  padding-top: 40px;\r\n  padding-bottom: 40px;\r\n  background-color: #f5f5f5;\r\n}\r\n"
+module.exports = ".jumbotron {\r\n  margin-bottom: 0px;\r\n  padding: 1rem 1rem;\r\n  border-radius: 0px;\r\n}\r\n"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = "html,\r\nbody {\r\n  height: 100%;\r\n}\r\n\r\nbody {\r\n  dis
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center\">\n  <h1 class=\"display-4\">Izračun plače za leto {{year}}</h1>\n  <p class=\"lead\">Za izračun plače vpišete samo 3 podatke: znesek bruto plače, znesek prevoza in malice ter število\n    vzdrževanih članov (npr. otrok). </p>\n</div>\n<app-salaryform></app-salaryform>"
+module.exports = "<div class=\"jumbotron\">\n  <div class=\"px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center\">\n    <h1 class=\"display-5\">Izračun plače za leto {{year}}</h1>\n    <p>Za izračun plače vpišete samo 3 podatke: znesek bruto plače, znesek prevoza in malice ter število\n      vzdrževanih članov (npr. otrok). </p>\n  </div>\n</div>\n\n<app-salaryform></app-salaryform>"
 
 /***/ }),
 
@@ -132,7 +132,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".form-signin {\r\n  width: 100%;\r\n  max-width: 330px;\r\n  padding: 15px;\r\n  margin: auto;\r\n}\r\n.form-signin .form-control {\r\n  position: relative;\r\n  box-sizing: border-box;\r\n  height: auto;\r\n  padding: 10px;\r\n  font-size: 16px;\r\n}\r\n"
+module.exports = ".form-signin {\r\n  width: 100%;\r\n  max-width: 330px;\r\n  padding: 15px;\r\n  margin: auto;\r\n}\r\n.form-signin .form-control {\r\n  position: relative;\r\n  box-sizing: border-box;\r\n  height: auto;\r\n  padding: 10px;\r\n  font-size: 16px;\r\n}\r\n.form-check {\r\n  text-align: left;\r\n}\r\n/* The switch - the box around the slider */\r\n.switch {\r\n  position: relative;\r\n  display: inline-block;\r\n  width: 60px;\r\n  height: 34px;\r\n  float: right;\r\n}\r\n/* Hide default HTML checkbox */\r\n.switch input {\r\n  display: none;\r\n}\r\n/* The slider */\r\n.slider {\r\n  position: absolute;\r\n  cursor: pointer;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background-color: #ccc;\r\n  transition: 0.4s;\r\n}\r\n.slider:before {\r\n  position: absolute;\r\n  content: \"\";\r\n  height: 26px;\r\n  width: 26px;\r\n  left: 4px;\r\n  bottom: 4px;\r\n  background-color: white;\r\n  transition: 0.4s;\r\n}\r\ninput.default:checked + .slider {\r\n  background-color: #444;\r\n}\r\ninput:checked + .slider:before {\r\n  -webkit-transform: translateX(26px);\r\n  transform: translateX(26px);\r\n}\r\n"
 
 /***/ }),
 
@@ -143,7 +143,7 @@ module.exports = ".form-signin {\r\n  width: 100%;\r\n  max-width: 330px;\r\n  p
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form class=\"form-signin\">\n\n\n  <label for=\"inputBruto\" class=\"sr-only\">Bruto plača</label>\n  <input (input)=\"calculate()\" type=\"text\" [(ngModel)]=\"salary.bruto\" id=\"inputBruto\" name=\"inputBruto\" class=\"form-control\"\n    placeholder=\"bruto znesek npr. 2500\" required=\"\" autofocus=\"\">\n  <label for=\"inputTransportAndLunch\" class=\"sr-only\">Prevoz in malica</label>\n  <input (input)=\"calculate()\" type=\"text\" id=\"inputTransportAndLunch\" name=\"inputTransportAndLunch\" [(ngModel)]=\"salary.transportAndLunch\"\n    class=\"form-control\" placeholder=\"strošek prevoza in malice npr. 200\" required=\"\">\n  <label for=\"inputKidsNumber\" class=\"sr-only\">Prevoz in malica</label>\n  <input (input)=\"calculate()\" type=\"text\" id=\"inputKidsNumber\" name=\"inputKidsNumber\" [(ngModel)]=\"salary.noOfChildren\"\n    class=\"form-control\" placeholder=\"št. vzdrževanih otrok npr. 2\" required=\"\">\n  <hr>\n  <p class=\"mt-5 mb-3 text-muted\">Nakazilo na račun:</p>\n  <h2 class=\"display-4\">{{salary.neto}} €</h2>\n  <p class=\"mt-5 mb-3 text-muted\">© Izračun plače 2018</p>\n</form>"
+module.exports = "<form class=\"form-signin\">\n\n  <div class=\"form-group\">\n    <label for=\"inputBruto\" class=\"sr-only\">Bruto plača</label>\n    <input (input)=\"calculate()\" type=\"text\" [(ngModel)]=\"salary.bruto\" id=\"inputBruto\" name=\"inputBruto\" class=\"form-control\"\n      placeholder=\"bruto znesek npr. 2500\" required=\"\" autofocus=\"\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"inputTransportAndLunch\" class=\"sr-only\">Prevoz in malica</label>\n    <input (input)=\"calculate()\" type=\"text\" id=\"inputTransportAndLunch\" name=\"inputTransportAndLunch\" [(ngModel)]=\"salary.transportAndLunch\"\n      class=\"form-control\" placeholder=\"strošek prevoza in malice npr. 200\" required=\"\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"inputKidsNumber\" class=\"sr-only\">Prevoz in malica</label>\n    <input (input)=\"calculate()\" type=\"text\" id=\"inputKidsNumber\" name=\"inputKidsNumber\" [(ngModel)]=\"salary.noOfChildren\"\n      class=\"form-control\" placeholder=\"št. vzdrževanih otrok npr. 2\" required=\"\">\n  </div>\n\n  <div class=\"form-group\">\n    <span *ngIf=\"salary.withGeneralRelief\">S splošno olajšavo</span>\n    <span *ngIf=\"!salary.withGeneralRelief\">Brez splošne olajšave</span>\n    <label class=\"switch \">\n      <input (change)=\"calculate()\" type=\"checkbox\" class=\"default\" id=\"generalRelief\" name=\"generalRelief\" [(ngModel)]=\"salary.withGeneralRelief\">\n      <span class=\"slider\"></span>\n    </label>\n  </div>\n\n\n  <hr>\n  <span class=\"mt-5 mb-3 text-muted\">Nakazilo na račun:</span>\n  <h2 class=\"display-5\">{{salary.neto | number: '1.0-2'}} €</h2>\n\n</form>"
 
 /***/ }),
 
@@ -176,7 +176,8 @@ var SalaryformComponent = /** @class */ (function () {
             bruto: "",
             noOfChildren: "",
             transportAndLunch: "",
-            neto: ""
+            neto: "0",
+            withGeneralRelief: true
         };
     };
     SalaryformComponent.prototype.calculate = function () {
@@ -184,7 +185,7 @@ var SalaryformComponent = /** @class */ (function () {
         var brutoContributions = this.calculateBrutoContributions(bruto);
         var noOfChildren = +this.salary.noOfChildren;
         var transportAndLunch = +this.salary.transportAndLunch;
-        var generalRelief = 275.22;
+        var generalRelief = this.salary.withGeneralRelief ? 275.22 : 0;
         var reliefForFamilyMembers = this.calculateReliefForFamilyMembers(noOfChildren);
         var incomeTaxBase = this.calculateIncomeTaxBase(bruto, generalRelief, reliefForFamilyMembers, brutoContributions);
         var advancePayment = this.calculateAdvancePayment(incomeTaxBase);
