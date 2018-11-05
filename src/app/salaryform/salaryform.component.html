@@ -1,0 +1,33 @@
+<form class="form-signin">
+
+  <div class="form-group">
+    <label for="inputBruto" class="sr-only">Bruto plača</label>
+    <input (input)="calculate()" type="text" [(ngModel)]="salary.bruto" id="inputBruto" name="inputBruto" class="form-control"
+      placeholder="bruto znesek npr. 2500" required="" autofocus="">
+  </div>
+  <div class="form-group">
+    <label for="inputTransportAndLunch" class="sr-only">Prevoz in malica</label>
+    <input (input)="calculate()" type="text" id="inputTransportAndLunch" name="inputTransportAndLunch" [(ngModel)]="salary.transportAndLunch"
+      class="form-control" placeholder="strošek prevoza in malice npr. 200" required="">
+  </div>
+  <div class="form-group">
+    <label for="inputKidsNumber" class="sr-only">Prevoz in malica</label>
+    <input (input)="calculate()" type="text" id="inputKidsNumber" name="inputKidsNumber" [(ngModel)]="salary.noOfChildren"
+      class="form-control" placeholder="št. vzdrževanih otrok npr. 2" required="">
+  </div>
+
+  <div class="form-group">
+    <span *ngIf="salary.withGeneralRelief">S splošno olajšavo</span>
+    <span *ngIf="!salary.withGeneralRelief">Brez splošne olajšave</span>
+    <label class="switch ">
+      <input (change)="calculate()" type="checkbox" class="default" id="generalRelief" name="generalRelief" [(ngModel)]="salary.withGeneralRelief">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+
+  <hr>
+  <span class="mt-5 mb-3 text-muted">Nakazilo na račun:</span>
+  <h2 class="display-5">{{salary.neto | number: '1.0-2'}} €</h2>
+
+</form>
