@@ -42,7 +42,6 @@ export class SalaryformComponent implements OnInit {
     let netoSalary = bruto - brutoContributions - advancePayment;
     let netoPayCheck = netoSalary + transportAndLunch;
     this.salary.neto = netoPayCheck.toString();
-    console.log(this.salary);
   }
 
   calculateIncomeTaxBase(
