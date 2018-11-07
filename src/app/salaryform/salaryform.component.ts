@@ -26,7 +26,9 @@ export class SalaryformComponent implements OnInit {
     let brutoContributions = this.calculateBrutoContributions(bruto);
     let noOfChildren = +this.salary.noOfChildren;
     let transportAndLunch = +this.salary.transportAndLunch;
-    let generalRelief = this.salary.withGeneralRelief ? 275.22 : 0;
+    let generalRelief = this.salary.withGeneralRelief
+      ? this.calculateGeneralRelease(bruto)
+      : 0;
     let reliefForFamilyMembers = this.calculateReliefForFamilyMembers(
       noOfChildren
     );
@@ -54,11 +56,25 @@ export class SalaryformComponent implements OnInit {
     );
   }
 
-  calculateBrutoContributions(bruto: number) {
+  private calculateGeneralRelease(bruto: number) {
+    let yearlyBruto = bruto * 12;
+    switch (true) {
+      case yearlyBruto < 11166.37:
+        return 6519.82 / 12;
+      case yearlyBruto >= 11166.37 && yearlyBruto <= 13316.83:
+        return (3302.7 + (19922.15 - 1.49601 * yearlyBruto)) / 12;
+      case yearlyBruto > 13316.83:
+        return 3302.7 / 12;
+      default:
+        return 3302.7 / 12;
+    }
+  }
+
+  private calculateBrutoContributions(bruto: number) {
     return (bruto / 100) * 22.1;
   }
 
-  calculateAdvancePayment(incomeTaxBase: number) {
+  private calculateAdvancePayment(incomeTaxBase: number) {
     switch (true) {
       case incomeTaxBase <= 668.44:
         return incomeTaxBase * (16 / 100);
@@ -75,7 +91,7 @@ export class SalaryformComponent implements OnInit {
     }
   }
 
-  calculateReliefForFamilyMembers(noOfChildren) {
+  private calculateReliefForFamilyMembers(noOfChildren) {
     let child1 = 203.08;
     let child2 = 220.77;
     let child3 = 368.21;
