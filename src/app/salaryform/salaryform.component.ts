@@ -23,25 +23,27 @@ export class SalaryformComponent implements OnInit {
 
   calculate() {
     let bruto = +this.salary.bruto;
-    let brutoContributions = this.calculateBrutoContributions(bruto);
-    let noOfChildren = +this.salary.noOfChildren;
-    let transportAndLunch = +this.salary.transportAndLunch;
-    let generalRelief = this.salary.withGeneralRelief
-      ? this.calculateGeneralRelease(bruto)
-      : 0;
-    let reliefForFamilyMembers = this.calculateReliefForFamilyMembers(
-      noOfChildren
-    );
-    let incomeTaxBase = this.calculateIncomeTaxBase(
-      bruto,
-      generalRelief,
-      reliefForFamilyMembers,
-      brutoContributions
-    );
-    let advancePayment = this.calculateAdvancePayment(incomeTaxBase);
-    let netoSalary = bruto - brutoContributions - advancePayment;
-    let netoPayCheck = netoSalary + transportAndLunch;
-    this.salary.neto = netoPayCheck.toString();
+    if (bruto > 100) {
+      let brutoContributions = this.calculateBrutoContributions(bruto);
+      let noOfChildren = +this.salary.noOfChildren;
+      let transportAndLunch = +this.salary.transportAndLunch;
+      let generalRelief = this.salary.withGeneralRelief
+        ? this.calculateGeneralRelease(bruto)
+        : 0;
+      let reliefForFamilyMembers = this.calculateReliefForFamilyMembers(
+        noOfChildren
+      );
+      let incomeTaxBase = this.calculateIncomeTaxBase(
+        bruto,
+        generalRelief,
+        reliefForFamilyMembers,
+        brutoContributions
+      );
+      let advancePayment = this.calculateAdvancePayment(incomeTaxBase);
+      let netoSalary = bruto - brutoContributions - advancePayment;
+      let netoPayCheck = netoSalary + transportAndLunch;
+      this.salary.neto = netoPayCheck.toString();
+    }
   }
 
   calculateIncomeTaxBase(
@@ -53,6 +55,21 @@ export class SalaryformComponent implements OnInit {
     return (
       bruto - (generalRelief + reliefForFamilyMembers) - brutoContributions
     );
+  }
+
+  clearInputBruto() {
+    this.salary.bruto = null;
+    this.salary.neto = "0";
+  }
+
+  clearInputTransportAndLunch() {
+    this.salary.transportAndLunch = null;
+    this.salary.neto = "0";
+  }
+
+  clearInputKidsNumber() {
+    this.salary.noOfChildren = null;
+    this.salary.neto = "0";
   }
 
   private calculateGeneralRelease(bruto: number) {
