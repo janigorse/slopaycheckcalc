@@ -92,7 +92,7 @@ export class SalaryformComponent implements OnInit {
 
   private calculateAdvancePayment(incomeTaxBase: number) {
     switch (true) {
-      case incomeTaxBase <= 668.44:
+      case incomeTaxBase > 0 && incomeTaxBase <= 668.44:
         return incomeTaxBase * (16 / 100);
       case incomeTaxBase > 668.44 && incomeTaxBase <= 1700:
         return 106.95 + (incomeTaxBase - 668.44) * (27 / 100);
