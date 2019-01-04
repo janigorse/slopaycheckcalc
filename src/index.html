@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sl">
   <head>
     <meta charset="utf-8" />
     <title>Izračun plače za leto 2019</title>
     <base href="/" />
-
+    <meta
+      name="description"
+      content="Izračun plače za leto 2019. Enostaven in hiter izračun plače."
+    />
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -13,12 +17,23 @@
       crossorigin="anonymous"
     />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <link rel="apple-touch-icon" href="/custom_icon.png" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=UA-5351811-16"
     ></script>
     <script>
+      function showDisclamer() {
+        var x = document.getElementById("disclamer");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
@@ -31,13 +46,58 @@
 
   <body class="text-center">
     <div class="jumbotron">
-      <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto">
         <h1 class="display-5">Izračun plače za leto 2019</h1>
         <p>
-          Za izračun plače vpišete samo 3 podatke: znesek bruto plače, znesek
-          prevoza in malice ter število vzdrževanih članov (npr. otrok). Izračun
-          je izključno informativne narave.
+          Za izračun plače za leto 2019 vpišete samo 3 podatke: znesek bruto
+          plače, znesek prevoza in malice ter število vzdrževanih članov (npr.
+          otrok). Izračun je izključno
+          <a href="#" onClick="showDisclamer()">informativne</a> narave.
         </p>
+        <div id="disclamer">
+            <p>
+                Aplikacija izracunplace.si je namenjena hitremu izračunu plače (recimo ko ste
+                sredi razgovora za službo ali pa se pogajate za višjo plačo). Za natančnejši izračun vam svetujemo obisk
+                računovodskega servisa ali uporabo katere od že obstoječih aplikacij. izracunplace.si ne sprejema
+                nikakršne odgovornosti za morebitne nepravilnosti pri izračunu plače.
+            </p>
+            <p>
+              Izračun plače (oziroma kolikšen znesek prejmete na vaš tekoči račun) izračunavamo v tej aplikaciji tako, da neto plači
+              prištejemo stroške prevoza in malice ter privzeto upoštevamo olajšave za vzdrževane družinske člane. Izračun neto plače pa poteka
+              po naslednjem postopku: 
+            </p>  
+            <p>
+              <ul class="centered">
+                <li>Na podlagi bruto plače, ki jo vpišete v vnosno
+                    okence najprej izračunamo prispevke (le ti znašajo 22,10% od bruto zneska).
+                </li>
+                <li>Nato
+                    izračunamo znesek olajšave za vzdrževane družinske člane (na podlagi
+                    <a
+                      href="http://www.fu.gov.si/fileadmin/Internet/Davki_in_druge_dajatve/Podrocja/Dohodnina/Letna_odmera_dohodnine/Opis/Lestvica_za_leto_2019.docx"
+                      >tabele v odstavku št. 4</a
+                    >).
+                  </li>
+                  <li>
+                      Znesek dohodninske osnove, ki jo potrebujemo za izračun akontacije
+                      dohodnine izračunamo tako, da od bruto zneska odštejemo olajšave in
+                      prispevke.
+                  </li>
+                  <li>
+                      Akontacijo dohodnine izračunamo po
+                      <a
+                        href="http://www.fu.gov.si/fileadmin/Internet/Davki_in_druge_dajatve/Podrocja/Dohodnina/Letna_odmera_dohodnine/Opis/Lestvica_za_leto_2019.docx"
+                        >dohodninski lestvici</a
+                      >, kjer za izračun uporabimo prej izračunano dohodninsko osnovo.
+                  </li>
+                  <li>Znesek neto plače izračunamo tako, da bruto plači odštejemo znesek prispevkov in znesek akontacije dohodnine.</li>
+              </ul>    
+            </p>
+            <p>
+
+            </p>   
+        </div>
+        
       </div>
     </div>
     <app-root> </app-root>

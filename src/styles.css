@@ -3,3 +3,16 @@
   padding: 1rem 1rem;
   border-radius: 0px;
 }
+
+#disclamer {
+  display: none;
+}
+
+ul.centered {
+  display: table;
+  margin: auto;
+}
+
+ul.centered > li {
+  text-align: left;
+}
