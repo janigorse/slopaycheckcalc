@@ -1,4 +1,4 @@
-import { BrowserModule } from "@angular/platform-browser";
+import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 
@@ -7,8 +7,7 @@ import { SalaryformComponent } from "./salaryform/salaryform.component";
 
 @NgModule({
   declarations: [AppComponent, SalaryformComponent],
-  imports: [BrowserModule, FormsModule],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [CommonModule, FormsModule],
+  providers: []
 })
 export class AppModule {}
