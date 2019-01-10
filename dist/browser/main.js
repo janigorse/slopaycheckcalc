@@ -41,7 +41,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div class=\"jumbotron\">\n  <div class=\"px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center\">\n    <h1 class=\"display-5\">Izračun plače za leto 2019</h1>\n    <p>\n      Za izračun plače vpišete samo 3 podatke: znesek bruto plače, znesek\n      prevoza in malice ter število vzdrževanih članov (npr. otrok). Izračun je\n      izključno informativne narave.\n    </p>\n  </div>\n</div> -->\n\n<app-salaryform></app-salaryform>\n"
+module.exports = "<!-- <div class=\"jumbotron\">\n  <div class=\"px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center\">\n    <h1 class=\"display-5\">Izračun plače za leto 2019</h1>\n    <p>\n      Za izračun plače vpišete samo 3 podatke: znesek bruto plače, znesek\n      prevoza in malice ter število vzdrževanih članov (npr. otrok). Izračun je\n      izključno informativne narave.\n    </p>\n  </div>\n</div> -->\n\n<app-salaryform></app-salaryform>\n<app-salary-detail></app-salary-detail>\n"
 
 /***/ }),
 
@@ -95,6 +95,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _salaryform_salaryform_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./salaryform/salaryform.component */ "./src/app/salaryform/salaryform.component.ts");
+/* harmony import */ var _salary_detail_salary_detail_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./salary-detail/salary-detail.component */ "./src/app/salary-detail/salary-detail.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -106,17 +107,81 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _salaryform_salaryform_component__WEBPACK_IMPORTED_MODULE_4__["SalaryformComponent"]],
+            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _salaryform_salaryform_component__WEBPACK_IMPORTED_MODULE_4__["SalaryformComponent"], _salary_detail_salary_detail_component__WEBPACK_IMPORTED_MODULE_5__["SalaryDetailComponent"]],
             imports: [_angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"]],
             providers: []
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/salary-detail/salary-detail.component.css":
+/*!***********************************************************!*\
+  !*** ./src/app/salary-detail/salary-detail.component.css ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/salary-detail/salary-detail.component.html":
+/*!************************************************************!*\
+  !*** ./src/app/salary-detail/salary-detail.component.html ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  salary-detail works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/salary-detail/salary-detail.component.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/salary-detail/salary-detail.component.ts ***!
+  \**********************************************************/
+/*! exports provided: SalaryDetailComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SalaryDetailComponent", function() { return SalaryDetailComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var SalaryDetailComponent = /** @class */ (function () {
+    function SalaryDetailComponent() {
+    }
+    SalaryDetailComponent.prototype.ngOnInit = function () {
+    };
+    SalaryDetailComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-salary-detail',
+            template: __webpack_require__(/*! ./salary-detail.component.html */ "./src/app/salary-detail/salary-detail.component.html"),
+            styles: [__webpack_require__(/*! ./salary-detail.component.css */ "./src/app/salary-detail/salary-detail.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], SalaryDetailComponent);
+    return SalaryDetailComponent;
 }());
 
 
